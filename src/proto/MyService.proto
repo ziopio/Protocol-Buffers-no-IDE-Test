@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+// package in proto language, optional...
+//package tutorial; 
+// optional output package for java code
+option java_package = "protocols";
+// optional Custom name for outer class that rappresents this file
+//option java_outer_classname = "ExampleProtocols";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+          string number = 1;
+          PhoneType type = 2;
+  }
+
+  repeated PhoneNumber phones = 4;
+}
+
+message AddressBook {
+  repeated Person people = 1;
+}

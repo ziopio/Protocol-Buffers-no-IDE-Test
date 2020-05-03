@@ -1,0 +1,1 @@
+java -cp "bin;lib/protobuf-java-3.11.4.jar" Main
